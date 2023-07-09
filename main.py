@@ -1,4 +1,4 @@
-from select_file import *
+from select_file_tk import *
 
 def readable_format():
    millisecond_duration = get_file_info(select_file())
