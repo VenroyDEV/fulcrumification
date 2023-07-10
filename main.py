@@ -1,3 +1,4 @@
+import audio 
 from select_file_tk import *
 
 def readable_format():
@@ -9,4 +10,4 @@ def readable_format():
    print(f"{int(minutes_duration)}:{int(seconds)}")  
 
 if __name__ == "__main__":
-   print(select_file())   
+   audio.process_video()
