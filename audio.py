@@ -16,7 +16,7 @@ mp3_file = AudioSegment.from_file(f"{(select_file_tk.select_file())}", format="m
 print("select a file to upload : ")
 
 #menu selection
-select_menu.menu()
+# select_menu.menu()
 
 
 

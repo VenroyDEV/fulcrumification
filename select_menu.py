@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Create the main window
 root = tk.Tk()
-
+root.withdraw()
 # Create a variable to store the selected option
 selected_option = tk.StringVar()
 
@@ -21,5 +21,3 @@ def menu(): # Pack the widgets
     option3.pack()
     accept_button.pack()
 
-# Start the main loop
-root.mainloop()

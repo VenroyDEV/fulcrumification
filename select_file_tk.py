@@ -2,7 +2,7 @@ from pydub import AudioSegment
 from tkinter import *
 from tkinter import filedialog
 root = Tk()
-
+root.withdraw()
 
 def select_file():
     root.filename = filedialog.askopenfilename(title="Select file", filetypes=(("MPEG-1 Audio Layer 3", "*.mp3"), ("All files", "*.*")))
@@ -15,6 +15,4 @@ def get_file_info(input):
    song_length = len(mp3_file)
    return song_length 
 
-def create_window():
 
-    root.mainloop()
