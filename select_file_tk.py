@@ -7,7 +7,7 @@ root = Tk()
 def select_file():
     root.filename = filedialog.askopenfilename(title="Select file", filetypes=(("MPEG-1 Audio Layer 3", "*.mp3"), ("All files", "*.*")))
     if root.filename :
-        print(f"the file name is : {root.filename}")
+        print(f"the path is : {root.filename}")
     return root.filename
 
 def get_file_info(input):
