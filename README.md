@@ -1,9 +1,8 @@
 <h1>fulcrumification</h1>
 
+![fulcrum](https://github.com/VenroyDEV/fulcrumification/assets/64047882/ba4216a1-04d3-4a8a-9322-47f87fd032ac)
+
 ## how to run this </br>
-
-
-
 
 
 
