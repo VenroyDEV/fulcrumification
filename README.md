@@ -13,8 +13,8 @@
 I love listening to Soundcloud beats, every Soundcloud artist has a producer tag, in my opinion they hype & spice up the song so much.
 When I run or do any sport activity while listening to music, I sometimes just imagine certain producer tags in a beat not made by the producer, this program is now attempting to solve this very uncommon inconvinience.
 
-The term "Fulcrumification" comes from the name "fulcrum" also known as "damianluck925", an american youtuber, who films himself smoking the penjamin in public.
-He has created multiple catchphrases such as "FULCRUM, COMING, UP!!! YODIEGANG, YOU FEEL ME?", and additionally adds sound snippets such as "fulcrum is a codename, we give to our secret informants".
+The term "Fulcrumification" comes from the name "fulcrum" also known as "[damianluck925](https://www.youtube.com/@damianluck925)", an american youtuber, who films himself smoking the penjamin in public.
+He has created multiple catchphrases such as "[FULCRUM, COMING, UP!!! YODIEGANG, YOU FEEL ME?](https://www.urbandictionary.com/define.php?term=FULCRUM)", and additionally adds sound snippets such as "fulcrum is a codename, we give to our secret informants".
 
 
 ## temp DEV NOTES </br>
