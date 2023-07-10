@@ -5,6 +5,7 @@ root = tk.Tk()
 root.withdraw()
 # Create a variable to store the selected option
 selected_option = tk.StringVar()
+print(selected_option.get())
 
 # Create the Radiobutton widgets
 option2 = tk.Radiobutton(root, text="fulcrumification", variable=selected_option, value="fulcrumification")
@@ -19,5 +20,7 @@ accept_button = tk.Button(root, text="Accept", command=accept_option)
 def menu(): # Pack the widgets
     option2.pack()
     option3.pack()
+    root.deiconify() 
     accept_button.pack()
+    return option2,option3
 

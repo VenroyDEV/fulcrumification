@@ -16,10 +16,12 @@ mp3_file = AudioSegment.from_file(f"{(select_file_tk.select_file())}", format="m
 print("select a file to upload : ")
 
 #menu selection
-# select_menu.menu()
+while select_menu.menu() is None: 
+   select_menu.menu.wait_window()
+   if select_menu.menu() is not None: 
+      break 
 
-
-
+    
 #select custom clips
 def custom_clips():
     customclip1 = AudioSegment.from_mp3(f"{select_file_tk.select_file_tk()}")
@@ -32,15 +34,15 @@ clip2 = AudioSegment.from_mp3(r"D:\\github\\fulrcumifiaction\fulcrumification\\m
 
 # Concatenate the audio clips
 # concatenated_clips = clip1.append(clip2, crossfade=0)
-
-# rms = "loudness" aka root means square (RMS) amplitude of the audio samples.
-
-
 if select_menu.selected_option == "fulcrumization":
     final_audio = mp3_file.overlay(clip2, position= 20000)
 
 if select_menu.selected_option == "customaudio":
     final_audio = mp3_file.overlay(custom_clips(), position= 20000)
+
+# rms = "loudness" aka root means square (RMS) amplitude of the audio samples.
+
+
 
 # Overlay the audio clips onto the MP3 file
 final_audio = mp3_file.overlay(clip2, position= 20000)
