@@ -24,6 +24,5 @@ He has created multiple catchphrases such as "[FULCRUM, COMING, UP!!! YODIEGANG,
 - tkinter
 - pydub
 - ffmpeg
-- simpleaudio (not added yet)
 
 Hopefully I can just use pyinstaller to make it into an .exe and avoid prerequired libraries to be manually downloaded.
