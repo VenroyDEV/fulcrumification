@@ -45,19 +45,28 @@ print("the overlay clip is : ", decible_of_clip1, "loud")
 difference_in_volume= decible_of_clip1 - decibel_of_random_timestamp
 print("difference_in_volume = ", difference_in_volume)
 
+reborn_clip1 = None
+
 if abs(decible_of_clip1) < abs(decibel_of_random_timestamp):
     print("the clip is ", difference_in_volume, "more loud than the selected video" )
-    if difference_in_volume > 10:
-        reborn_clip1= clip1.apply_gain(-5)
-        print("video is too loud, I am reducing the sound gain by *not sure yet*")
+    if difference_in_volume > 15:
+        goal = difference_in_volume * 15/difference_in_volume 
+        apply_gain_config = difference_in_volume - goal 
+        reborn_clip1= clip1.apply_gain(-apply_gain_config)
+        print("clip is too loud, I am reducing the sound gain by *not sure yet*")
+    reborn_clip1= clip1.apply_gain(+apply_gain_config)
 else:
         print("the clip is ", difference_in_volume, "more quite than the selected video")
-        if difference_in_volume < 10:
-            reborn_clip1= clip1.apply_gain(+10) #I think I would have to do at least +25, if the video clip is -10, and we raise it +10, then it would be the same db as the selected mp3.
-            print("video is more quite, I am raising the sound gain by *not sure yet*")
+        if difference_in_volume < 15:
+            goal =  15/difference_in_volume 
+            goal2 = difference * goal
+            apply_gain_config = difference_in_volume - goal 
+            reborn_clip1= clip1.apply_gain(+apply_gain_config)
+            print("clip is more quite, I am raising the sound gain by *not sure yet*")
+
+        reborn_clip1= clip1.apply_gain(+apply_gain_config)
 
 
-reborn_clip1= clip1.apply_gain(+15)
 
 
 
