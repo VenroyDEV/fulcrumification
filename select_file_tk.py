@@ -1,11 +1,14 @@
 from pydub import AudioSegment
-from tkinter import *
 from tkinter import filedialog
-root = Tk()
+import tkinter
+
+root = tkinter.Tk()
 root.withdraw()
 
 def select_file():
-    root.filename = filedialog.askopenfilename(title="Select file", filetypes=(("MPEG-1 Audio Layer 3", "*.mp3"), ("All files", "*.*")))
+    root.filename = filedialog.askopenfilename(title="Select file", 
+    filetypes=(("MPEG-1 Audio Layer 3", "*.mp3"), ("All files", "*.*")))
+
     if root.filename :
         print(f"the path is : {root.filename}")
     return root.filename

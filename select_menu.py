@@ -1,26 +1,41 @@
+from ast import Lambda
+import tkinter as tk
+from ast import Lambda
 import tkinter as tk
 
 # Create the main window
 root = tk.Tk()
 root.withdraw()
 # Create a variable to store the selected option
-selected_option = tk.StringVar()
-print(selected_option.get())
+selected_option = "testest "
 
 # Create the Radiobutton widgets
-option2 = tk.Radiobutton(root, text="fulcrumification", variable=selected_option, value="fulcrumification")
-option3 = tk.Radiobutton(root, text="Custom Audio", variable=selected_option, value="customaudio")
+#Lamda function to change variables
+def set_selected_option(option):
+    selected_option = option
+    return selected_option
+
+def fulcrum_option():
+    selected_option = "fulcrumification"
+    return selected_option 
+
+def custom_option():
+    selected_option = "custom"
+    return selected_option
+
+
+option1_button = tk.Button(root, text="fulcrumification", command=lambda:fulcrum_option()) 
+option2_button = tk.Button(root, text="custom", command=lambda:fulcrum_option()) 
 
 # Create a button to accept the selected option
-def accept_option():
-    print("Selected option:", selected_option.get())
+def accept_option(selected_option2):
+    global selected_option
+    print("Selected option:", selected_option2)
 
-accept_button = tk.Button(root, text="Accept", command=accept_option)
+accept_button = tk.Button(root, text="Accept", command=lambda: accept_option(set_selected_option(tton)))
 
 def menu(): # Pack the widgets
-    option2.pack()
-    option3.pack()
+    option1_button.pack()
     root.deiconify() 
     accept_button.pack()
-    return option2,option3
-
+    return selected_option

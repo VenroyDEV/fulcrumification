@@ -21,9 +21,9 @@ He has created multiple catchphrases such as "[FULCRUM, COMING, UP!!! YODIEGANG,
 
 <h3>required libraries: </h3> 
 
-- tkinter
-- pydub
-- ffmpeg
-- simpleaudio (not added yet)
+- tkinter (gui)
+- pydub (framework/library for easy audio management)
+- ffmpeg (editing)
+- librosa (easy amplitude data fetch)
 
 Hopefully I can just use pyinstaller to make it into an .exe and avoid prerequired libraries to be manually downloaded.

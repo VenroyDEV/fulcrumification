@@ -1,8 +1,7 @@
 import audio 
-from select_file_tk import *
-
+import select_file_tk
 def readable_format():
-   millisecond_duration = get_file_info(select_file())
+   millisecond_duration = select_file_tk.get_file_info(select_file_tk.select_file())
    seconds_duration =  millisecond_duration /1000
    seconds = seconds_duration % 60
    minutes_duration = seconds_duration // 60
