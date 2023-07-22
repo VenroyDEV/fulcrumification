@@ -1,4 +1,6 @@
 from tkinter import filedialog
+
+from more_itertools import difference
 import select_file_tk 
 from pydub import AudioSegment
 import random
@@ -19,7 +21,6 @@ print("the decibles of the random timestamp is : ",decibel_of_random_timestamp)
 
 
 
-print("select a file to upload : ")
 
 # menu selection
 # while select_menu.menu() is None: 
@@ -38,10 +39,28 @@ def custom_clips():
 clip1 = AudioSegment.from_mp3(r"D:\\github\\fulrcumifiaction\\fulcrumification\\mp3\\fulcrum.mp3")
 clip2 = AudioSegment.from_mp3(r"D:\\github\\fulrcumifiaction\fulcrumification\\mp3\\codeword.mp3")
 
-decible_of_clip1 = abs(clip1.max_dBFS)
-gain_config= decibel_of_random_timestamp + decible_of_clip1
-print("the clip will be increased by : + ", abs(gain_config))
-reborn_clip1= clip1.apply_gain(+abs(gain_config))
+decible_of_clip1 = clip1.max_dBFS
+print("the overlay clip is : ", decible_of_clip1, "loud")
+
+difference_in_volume= decible_of_clip1 - decibel_of_random_timestamp
+print("difference_in_volume = ", difference_in_volume)
+
+if abs(decible_of_clip1) < abs(decibel_of_random_timestamp):
+    print("the clip is ", difference_in_volume, "more loud than the selected video" )
+    if difference_in_volume > 10:
+        reborn_clip1= clip1.apply_gain(-5)
+        print("video is too loud, I am reducing the sound gain by *not sure yet*")
+else:
+        print("the clip is ", difference_in_volume, "more quite than the selected video")
+        if difference_in_volume < 10:
+            reborn_clip1= clip1.apply_gain(+10) #I think I would have to do at least +25, if the video clip is -10, and we raise it +10, then it would be the same db as the selected mp3.
+            print("video is more quite, I am raising the sound gain by *not sure yet*")
+
+
+reborn_clip1= clip1.apply_gain(+15)
+
+
+
 # Concatenate the audio clips
 # concatenated_clips = clip1.append(clip2, crossfade=0)
 # if select_menu.selected_option == "fulcrumization":
