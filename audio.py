@@ -36,14 +36,20 @@ def custom_clips():
 
 # static audio clips (Fulcrumification)
 
-clip1 = AudioSegment.from_mp3(r"D:\\github\\fulrcumifiaction\\fulcrumification\\mp3\\fulcrum.mp3")  # noqa: E501
-clip2 = AudioSegment.from_mp3(r"D:\\github\\fulrcumifiaction\fulcrumification\\mp3\\codeword.mp3")  # noqa: E501
+clip1 = AudioSegment.from_mp3(r"D:/github/fulrcumifiaction/fulcrumification/mp3/fulcrum.mp3")  # noqa: E501
+clip2 = AudioSegment.from_mp3(r"D:/github/fulrcumifiaction/fulcrumification/mp3/codeword.mp3")  # noqa: E501
+clips = {"fulcrum":clip1,"codeword":clip2}
 
-decible_of_clip1 = clip1.max_dBFS
+store_clip_decision = input(f"here are all the current clips you can select \n {clips.keys()} \n enter a one of the options : ").lower()
+selected_clip = clips.get(store_clip_decision)
+
+
+decible_of_clip1 = selected_clip.max_dBFS
 print("the overlay clip is : ", decible_of_clip1, "loud")
 
 difference_in_volume= decible_of_clip1 - decibel_of_random_timestamp
 print("difference_in_volume = ", difference_in_volume)
+
 
 
 def gain_decibel():
@@ -51,12 +57,12 @@ def gain_decibel():
     if abs(decible_of_clip1) < abs(decibel_of_random_timestamp):
         print("the clip is ", difference_in_volume, "more loud than the selected video" )  # noqa: E501
         required_amount_for_gain = 15 - difference_in_volume                       #magic number = the decimal range you want to be +above the mp3, so that the clip stand out, you can make it dynamic at somepoint.
-        reborn_clip1= clip1.apply_gain(required_amount_for_gain)
+        reborn_clip1= selected_clip.apply_gain(required_amount_for_gain)
         print(f"added/subtracted {required_amount_for_gain} of decibel")  # noqa: E501
     else:
             print("the clip is ", difference_in_volume, "more quite than the selected video")  # noqa: E501
             required_amount_for_gain = 15 + abs(difference_in_volume)
-            reborn_clip1= clip1.apply_gain(+required_amount_for_gain)
+            reborn_clip1= selected_clip.apply_gain(+required_amount_for_gain)
             print(f"clip is more quite, I am raising the sound gain by {required_amount_for_gain}")  # noqa: E501
     return reborn_clip1
 
