@@ -50,16 +50,14 @@ def gain_decibel():
     global reborn_clip1
     if abs(decible_of_clip1) < abs(decibel_of_random_timestamp):
         print("the clip is ", difference_in_volume, "more loud than the selected video" )  # noqa: E501
-        if difference_in_volume > 15:
-            required_amount_for_gain = -15 + difference_in_volume
-            reborn_clip1= clip1.apply_gain(-required_amount_for_gain)
-            print(f"clip is too loud, I am reducing the sound gain by {required_amount_for_gain}")  # noqa: E501
+        required_amount_for_gain = 15 - difference_in_volume                       #magic number = the decimal range you want to be +above the mp3, so that the clip stand out, you can make it dynamic at somepoint.
+        reborn_clip1= clip1.apply_gain(required_amount_for_gain)
+        print(f"added/subtracted {required_amount_for_gain} of decibel")  # noqa: E501
     else:
             print("the clip is ", difference_in_volume, "more quite than the selected video")  # noqa: E501
-            if difference_in_volume < 15:
-                required_amount_for_gain = 15 + abs(difference_in_volume)
-                reborn_clip1= clip1.apply_gain(+required_amount_for_gain)
-                print(f"clip is more quite, I am raising the sound gain by {required_amount_for_gain}")  # noqa: E501
+            required_amount_for_gain = 15 + abs(difference_in_volume)
+            reborn_clip1= clip1.apply_gain(+required_amount_for_gain)
+            print(f"clip is more quite, I am raising the sound gain by {required_amount_for_gain}")  # noqa: E501
     return reborn_clip1
 
 
