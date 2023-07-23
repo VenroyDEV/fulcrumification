@@ -41,6 +41,10 @@ clip2 = AudioSegment.from_mp3(r"D:/github/fulrcumifiaction/fulcrumification/mp3/
 clips = {"fulcrum":clip1,"codeword":clip2}
 
 store_clip_decision = input(f"here are all the current clips you can select \n {clips.keys()} \n enter a one of the options : ").lower()
+while store_clip_decision not in clips.keys(): 
+    print("your Input does not exist, try again!")
+    store_clip_decision = input(f"here are all the current clips you can select \n {clips.keys()} \n enter a one of the options : ").lower()
+
 selected_clip = clips.get(store_clip_decision)
 
 
