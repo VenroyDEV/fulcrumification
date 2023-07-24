@@ -10,7 +10,6 @@ root.withdraw()
 selected_option = "testest "
 
 # Create the Radiobutton widgets
-#Lamda function to change variables
 def set_selected_option(option):
     selected_option = option
     return selected_option
